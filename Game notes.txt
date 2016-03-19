@@ -1,0 +1,22 @@
+BallGame Notes
+
+Add forces to speed, have the sign of the force be the direction
+Do all calculations in cartesian, then translate to screen coordinates.
+
+Ball bounces around on screen and goal is to get the ball into a certain
+area to win the level, then the game progresses to the next level.
+Levels are puzzles, get successively more complicated.
+
+User controls ball by imparting horizontal force when the ball is on
+a surface.
+
+Player can get the ball to move vertically through the use of bumpers,
+catapults, elevators, etc.
+
+Levels could include gates, one way gates, buttons that unlock/change
+the level. Accelerator and decelerator zones.
+
+Bounce charactersistics can change from wall to wall. Changes in gravity
+from level to level. 
+
+Pinball looking ball, theme changes artistically from level to level
