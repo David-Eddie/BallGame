@@ -20,3 +20,5 @@ Bounce charactersistics can change from wall to wall. Changes in gravity
 from level to level. 
 
 Pinball looking ball, theme changes artistically from level to level
+
+Event0 is always a state toggle from a switch

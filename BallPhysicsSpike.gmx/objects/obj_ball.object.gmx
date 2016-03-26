@@ -3,7 +3,7 @@
   <spriteName>spr_ball</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-15</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -31,6 +31,32 @@ yloc = room_height - y;
 vspd = 0;
 hspd = 0;
 global.grav = -1;
+speed_limit = 15;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(obj_engine){
+    alarm_set(0,room_speed)
+}
 </string>
           </argument>
         </arguments>
@@ -78,7 +104,9 @@ yloc = room_height - y;
             <kind>1</kind>
             <string>///Movement
 
-
+if(instance_exists(obj_win)){
+    exit;
+}
 //Gravity
 if(!place_meeting(xloc, scr_screen_y(yloc-1), obj_wall)){
     vspd += global.grav;
@@ -99,6 +127,7 @@ for(var i = 0; i &lt; vel_mag; i++){
     else{
         var wall = instance_place(xloc,scr_screen_y(yloc+ u_v), obj_wall);
         vspd = floor(wall.bounce * vspd);
+        wall.hit = true;
         break;
     }
     
@@ -108,6 +137,7 @@ for(var i = 0; i &lt; vel_mag; i++){
     else{
         var wall = instance_place(xloc + u_h,scr_screen_y(yloc), obj_wall);
         hspd = floor(wall.bounce * hspd);
+        wall.hit = true;
         break;
     }
 }
@@ -183,7 +213,9 @@ y = room_height - yloc;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspd += 2;
+            <string>if(hspd &lt; speed_limit){
+    hspd += 2;
+}
 </string>
           </argument>
         </arguments>
@@ -206,7 +238,32 @@ y = room_height - yloc;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspd += -2;
+            <string>if(hspd &gt; -speed_limit){
+    hspd += -2;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
 </string>
           </argument>
         </arguments>

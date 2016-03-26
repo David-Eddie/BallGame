@@ -1,0 +1,18 @@
+To Do List:
+
+X Switches
+X Doors
+X Goal
+
+- Moving Platforms
+X Deaths
+-- Traps
+-- Hazards
+X Accelerator vs Decelerator Zones
+- Change Gravity
+- Magnets
+- Catapault
+X Teleporters
+- Bigger Levels
+- One way walls
+- Varying Bounciness of Walls

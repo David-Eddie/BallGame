@@ -4,12 +4,21 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_win</sound>
+    <sound>sound\snd_die</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_bumper</sprite>
     <sprite>sprites\spr_goal</sprite>
+    <sprite>sprites\spr_win</sprite>
+    <sprite>sprites\spr_switch</sprite>
+    <sprite>sprites\spr_trap_kill</sprite>
+    <sprite>sprites\spr_acclerator</sprite>
+    <sprite>sprites\spr_teleporter</sprite>
+    <sprite>sprites\spr_teleporter_target</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -17,16 +26,33 @@
     <script>scripts\scr_screen_y.gml</script>
     <script>scripts\scr_cart_y.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_debug</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_ball</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_bumper</object>
     <object>objects\obj_goal</object>
-    <object>objects\object4</object>
+    <object>objects\obj_win</object>
+    <object>objects\obj_switch</object>
+    <object>objects\obj_debug</object>
+    <object>objects\obj_goback</object>
+    <object>objects\obj_door</object>
+    <object>objects\obj_trap_kill</object>
+    <object>objects\obj_engine</object>
+    <object>objects\obj_accelerator</object>
+    <object>objects\obj_teleporter</object>
+    <object>objects\obj_teleporter_target</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
-    <room>rooms\room1</room>
+    <room>rooms\room_start</room>
+    <room>rooms\room_test</room>
+    <room>rooms\level_1</room>
+    <room>rooms\level_2</room>
+    <room>rooms\level_3</room>
+    <room>rooms\level_1_bumpers</room>
+    <room>rooms\room_walls</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
